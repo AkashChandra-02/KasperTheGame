@@ -12,7 +12,7 @@ void setup() {
    pinMode(7,OUTPUT); //LEDStrip
 
   Serial.begin(9600);
-  
+  randomSeed(analogRead(0));
   int ranLED;
   int sensor;
   boolean sense = false;
@@ -36,7 +36,7 @@ void setup() {
 
   Serial.println(ranLED);
   
-  //TODO: Fix Detection
+
   while(sense == false)
   {
     int voltageAtResistor = analogRead('A'+ranLED);
